@@ -1,0 +1,25 @@
+{
+  "name": "npm_jwt_tllib",
+  "version": "1.0.0",
+  "description": "A typesafe library to encode, decode and verify JWTs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AZM999/npm_jwt_tllib.git"
+  },
+  "keywords": [
+    "JWT",
+    "jwt",
+    "encoder",
+    "decoder"
+  ],
+  "author": "azm999",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AZM999/npm_jwt_tllib/issues"
+  },
+  "homepage": "https://github.com/AZM999/npm_jwt_tllib#readme"
+}
