@@ -4,7 +4,10 @@
   "description": "A typesafe library to encode, decode and verify JWTs.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start",
+    "start:dev": "nodemon",
+    "dev": "webpack-dev-server --inline --hot",
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -12,14 +15,30 @@
   },
   "keywords": [
     "JWT",
-    "jwt",
-    "encoder",
-    "decoder"
+    "JWTEncoder",
+    "JWTdecoder"
   ],
   "author": "azm999",
   "license": "ISC",
+  "engines": {
+    "node": "18.19.0"
+  },
   "bugs": {
     "url": "https://github.com/AZM999/npm_jwt_tllib/issues"
   },
-  "homepage": "https://github.com/AZM999/npm_jwt_tllib#readme"
+  "homepage": "https://github.com/AZM999/npm_jwt_tllib#readme",
+  "devDependencies": {
+    "@types/jasmine": "^5.1.4",
+    "jasmine-core": "^5.2.0",
+    "karma": "^6.4.3",
+    "karma-chrome-launcher": "^3.2.0",
+    "karma-jasmine": "^5.1.0",
+    "karma-webpack": "^5.0.1",
+    "nodemon": "^3.1.4",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "webpack": "^5.93.0",
+    "webpack-dev-server": "^5.0.4"
+  }
 }
