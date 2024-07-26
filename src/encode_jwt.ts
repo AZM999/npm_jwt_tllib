@@ -1,6 +1,5 @@
 const b64 = require('./b64.ts')
 const b64encode = b64.b64encode;
-const b64decode = b64.b64decode;
 
 import CryptoJS from 'crypto-js'
 
@@ -9,6 +8,7 @@ import CryptoJS from 'crypto-js'
  * 
  */
 interface payload_spec{
+    data?: string;
     id?: string;
     iat?: number;
     exp?: number;
@@ -50,8 +50,8 @@ interface payload_spec{
         typ: 'JWT',
       });
   
-    const enc_header:string = b64encode (header);
-    console.log (header, enc_header);
+    const enc_header = b64encode (header);
+    
     // copy of payload into interface obj
     let new_payload: payload_spec = payload;
   
@@ -61,9 +61,13 @@ interface payload_spec{
       new_payload.exp =  timestamp + ttl;
     }
 
-    console.log (JSON.stringify(new_payload));
+    // force id to be string
+    if (typeof id === 'number' ){
+      id = id.toString();
+    }
+    new_payload.id = id;
+
     const enc_payload = b64encode (JSON.stringify(new_payload));
-    console.log(`${enc_header}.${enc_payload}`);
     const signature = CryptoJS.HmacSHA256(`${enc_header}.${enc_payload}`, secret).toString();
     const enc_sign  = b64encode (signature);
     
@@ -71,5 +75,5 @@ interface payload_spec{
   
   }
 
-  console.log (encode_jwt('secret',123, {sub: 'test'}));
-  module.exports = encode_jwt;
+//console.log (encode_jwt('secret',123, {data: 'foo-bar'}, 60 * 60));
+module.exports = encode_jwt;

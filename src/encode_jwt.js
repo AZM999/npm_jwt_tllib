@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const b64 = require('./b64.ts');
 const b64encode = b64.b64encode;
-const b64decode = b64.b64decode;
 const crypto_js_1 = __importDefault(require("crypto-js"));
 /**
  *
@@ -32,19 +31,21 @@ function encode_jwt(secret, id, payload, ttl, options) {
         typ: 'JWT',
     });
     const enc_header = b64encode(header);
-    console.log(header, enc_header);
     // copy of payload into interface obj
     let new_payload = payload;
     const timestamp = new_payload.iat || Math.floor(Date.now() / 1000);
     if (typeof ttl !== 'undefined') {
         new_payload.exp = timestamp + ttl;
     }
-    console.log(JSON.stringify(new_payload));
+    // force id to be string
+    if (typeof id === 'number') {
+        id = id.toString();
+    }
+    new_payload.id = id;
     const enc_payload = b64encode(JSON.stringify(new_payload));
-    console.log(`${enc_header}.${enc_payload}`);
     const signature = crypto_js_1.default.HmacSHA256(`${enc_header}.${enc_payload}`, secret).toString();
     const enc_sign = b64encode(signature);
     return `${enc_header}.${enc_payload}.${enc_sign}`;
 }
-console.log(encode_jwt('secret', 123, { sub: 'test' }));
+//console.log (encode_jwt('secret',123, {data: 'foo-bar'}, 60 * 60));
 module.exports = encode_jwt;

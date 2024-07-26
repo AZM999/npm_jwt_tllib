@@ -2,19 +2,27 @@
 // AZM
 // 24/07/2024
 // JWT ENCODER, DECODER
-Object.defineProperty(exports, "__esModule", { value: true });
-const b64 = require('./b64.ts');
-const b64encode = b64.b64encode;
-const b64decode = b64.b64decode;
+const encode_jwt = require('./encode_jwt');
+const decode_jwt = require('./decode_jwt');
+const validate_jwt = require('./validate_jwt');
 const tok = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ";
 var splitted = tok.split(".", 3);
 var header = splitted[0];
 var payload = splitted[1];
 var sign = splitted[2];
-console.log("header:", header, "\npayload:", payload, "\nsignature:", sign);
+//console.log ("header:",header, "\npayload:",payload, "\nsignature:",sign);
 var strn = atob(header);
-console.log(strn);
-console.log(b64encode(strn));
+//console.log (strn);
+//console.log (b64encode(strn));
+const jwt = (encode_jwt('secret', 123, { data: 'foo-bar' }, 60 * 60));
+console.log("jwt: ", jwt);
+const dec_jwt = decode_jwt('secret', jwt);
+console.log(dec_jwt);
+console.log("string: ");
+if (typeof jwt === 'string') {
+    console.log(true);
+}
+console.log(validate_jwt(jwt));
 //check 
 // console.log ("b64encode:", b64encode(strn));
 // var str1 = b64encode (strn);
