@@ -28,7 +28,9 @@
   },
   "homepage": "https://github.com/AZM999/npm_jwt_tllib#readme",
   "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
     "@types/jasmine": "^5.1.4",
+    "@types/utf8": "^3.0.3",
     "jasmine-core": "^5.2.0",
     "karma": "^6.4.3",
     "karma-chrome-launcher": "^3.2.0",
@@ -40,5 +42,9 @@
     "typescript": "^5.5.4",
     "webpack": "^5.93.0",
     "webpack-dev-server": "^5.0.4"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0",
+    "utf8": "^3.0.0"
   }
 }
