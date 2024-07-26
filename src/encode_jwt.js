@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.encode_jwt = encode_jwt;
 const b64 = require('./b64.ts');
 const b64encode = b64.b64encode;
 const crypto_js_1 = __importDefault(require("crypto-js"));
@@ -48,4 +49,4 @@ function encode_jwt(secret, id, payload, ttl, options) {
     return `${enc_header}.${enc_payload}.${enc_sign}`;
 }
 //console.log (encode_jwt('secret',123, {data: 'foo-bar'}, 60 * 60));
-module.exports = encode_jwt;
+//module.exports = encode_jwt;

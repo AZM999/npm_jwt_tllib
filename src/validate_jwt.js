@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.validate_jwt = validate_jwt;
 const crypto_js_1 = __importDefault(require("crypto-js"));
 const b64 = require('./b64.ts');
 const b64encode = b64.b64encode;
@@ -13,6 +14,7 @@ const header = Object.assign({
     typ: 'JWT',
 });
 function validate_jwt(secret, jwt) {
+    console.log(typeof jwt);
     if (typeof jwt !== 'string') {
         throw new Error('"jwt" must be a string!');
     }
@@ -47,6 +49,6 @@ function validate_jwt(secret, jwt) {
     return true;
 }
 //const secret = 'secret';
-//const jwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiZm9vLWJhciIsImV4cCI6MTcyMjAyMDc5MiwiaWQiOiIxMjMifQ.MjkxNzdhMDRjZWM4M2IyMzAzM2VmNjY3NTUzMDVhNjk3YzVjMmE1MTJhMmMyYjViYTNmY2Q3YTJkYWY2MTI4Mg";
+//const jwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiZm9vLWJhciIsImV4cCI6MTcyMjAyMjQ3MSwiaWQiOiIxMjMifQ.YjMzODA2OGRkZGQxMDA3MjAwNTRjOGY2YTlhNjJiNjlhY2I5MGExZWZlOTk1Njg2YzQ0NTc5NTE1NTJmOWI1OA";
 //console.log(validate_jwt(secret, jwt));
-module.exports = validate_jwt;
+//module.exports = validate_jwt;

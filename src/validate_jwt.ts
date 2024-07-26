@@ -22,8 +22,9 @@ interface payload_spec{
 }
 
 
-function validate_jwt(secret: string, jwt: string): boolean
+export function validate_jwt(secret: string, jwt: string): boolean
 {
+    console.log (typeof jwt);
     if (typeof jwt !== 'string') {
         throw new Error('"jwt" must be a string!');
     }
@@ -68,7 +69,7 @@ function validate_jwt(secret: string, jwt: string): boolean
 }
 
 //const secret = 'secret';
-//const jwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiZm9vLWJhciIsImV4cCI6MTcyMjAyMDc5MiwiaWQiOiIxMjMifQ.MjkxNzdhMDRjZWM4M2IyMzAzM2VmNjY3NTUzMDVhNjk3YzVjMmE1MTJhMmMyYjViYTNmY2Q3YTJkYWY2MTI4Mg";
+//const jwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiZm9vLWJhciIsImV4cCI6MTcyMjAyMjQ3MSwiaWQiOiIxMjMifQ.YjMzODA2OGRkZGQxMDA3MjAwNTRjOGY2YTlhNjJiNjlhY2I5MGExZWZlOTk1Njg2YzQ0NTc5NTE1NTJmOWI1OA";
 //console.log(validate_jwt(secret, jwt));
 
-module.exports = validate_jwt;
+//module.exports = validate_jwt;

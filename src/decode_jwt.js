@@ -33,4 +33,4 @@ function decode_jwt(secret, jwt) {
 }
 //const jwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiZm9vLWJhciIsImV4cCI6MTcyMjAyMDc5MiwiaWQiOiIxMjMifQ.MjkxNzdhMDRjZWM4M2IyMzAzM2VmNjY3NTUzMDVhNjk3YzVjMmE1MTJhMmMyYjViYTNmY2Q3YTJkYWY2MTI4Mg";
 //console.log ( decode_jwt('secret',jwt));
-module.exports = decode_jwt;
+//module.exports = decode_jwt;

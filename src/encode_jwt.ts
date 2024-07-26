@@ -30,7 +30,7 @@ interface payload_spec{
   // encode functions creates the JWT with the suppplied params, 
   // for validation pass the JWT to validate
   
-  function encode_jwt(secret: string, id: string | number, payload: payload_spec, ttl?: number, options?: object): string
+  export function encode_jwt(secret: string, id: string | number, payload: payload_spec, ttl?: number, options?: object): string
   {
     // param check
     if ( typeof secret !== "string" )
@@ -76,4 +76,4 @@ interface payload_spec{
   }
 
 //console.log (encode_jwt('secret',123, {data: 'foo-bar'}, 60 * 60));
-module.exports = encode_jwt;
+//module.exports = encode_jwt;
