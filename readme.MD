@@ -30,7 +30,7 @@ The payload object can contain the following properties:
 - ```[key: string]: any (optional)```: Any additional properties.(not supported currently)
 
 ### Returns
-    - ```(string)```: The encoded JWT.
+- ```(string)```: The encoded JWT.
 
 ## Function: ```decode_jwt (secret, jwt) ```
 ## Parameters
