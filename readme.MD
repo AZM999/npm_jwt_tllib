@@ -11,7 +11,7 @@ Install the library using npm:
 ```import { encode_jwt, decode_jwt, validate_jwt } from 'npm_jwt_tllib';```
 
 ## Function: ```encode_jwt (secret, id, payload, options)```
-###Parameters
+### Parameters
 - ```secret (string)```: The secret key used to sign the JWT  Must be a string.
 - ```id (string | number)```: The unique identifier for the token. Must be a string or a number.
 - ```payload (object)```: The payload to include in the JWT. Must be an object.
