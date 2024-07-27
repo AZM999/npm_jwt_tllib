@@ -17,6 +17,7 @@ Install the library using npm:
 - ```payload (object)```: The payload to include in the JWT. Must be an object.
 - ```ttl (number) (optional)```: The time-to-live for the token in seconds. If provided, the token will expire after this duration.
 - ```options (object) (optional)```: Additional options for the JWT. (Currently not used in this implementation.)
+
 #### Interface: ```payload_spec```
 The payload object can contain the following properties:
 - ```data (string) (optional)```: Custom data to include in the payload.
@@ -27,7 +28,8 @@ The payload object can contain the following properties:
 - ```iss (string) (optional)```: Issuer.
 - ```sub (string) (optional)```: Subject.
 - ```[key: string]: any (optional)```: Any additional properties.(not supported currently)
-###Returns
+
+### Returns
     - ```(string)```: The encoded JWT.
 
 ## Function: ```decode_jwt (secret, jwt) ```
@@ -36,7 +38,7 @@ The payload object can contain the following properties:
 - ```secret (string)```: The secret key used to sign the JWT. Must be a string.
 - ```jwt (string)```: The JWT string to decode. Must be a string.
 
-Returns
+### Returns
 
 - ```(object)```: An object containing the id, payload, and expires_at properties.
 
