@@ -44,7 +44,6 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
-    "crypto-js": "^4.2.0",
-    "utf8": "^3.0.0"
+    "crypto-js": "^4.2.0"
   }
 }
