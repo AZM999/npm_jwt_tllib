@@ -44,6 +44,7 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
-    "crypto-js": "^4.2.0"
+    "crypto-js": "^4.2.0",
+    "npm_jwt_tllib": "^1.0.2"
   }
 }

@@ -2,6 +2,8 @@
 
 A type-safe library for encoding and decoding JSON Web Tokens (JWTs).
 
+npm link: https://www.npmjs.com/package/npm_jwt_tllib
+
 ## Installation
 
 Install the library using npm:
