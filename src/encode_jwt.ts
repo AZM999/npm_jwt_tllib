@@ -1,6 +1,13 @@
-const b64 = require('./b64.ts')
-const b64encode = b64.b64encode;
+// AZM
+// JWT ENCODER
+// 26/07/2024
 
+//const b64 = require('./b64.ts')
+//const b64encode = b64.b64encode;
+
+
+
+import { b64encode } from './b64';
 import CryptoJS from 'crypto-js'
 
 
@@ -59,6 +66,9 @@ interface payload_spec{
     if (typeof ttl !== 'undefined')
     {
       new_payload.exp =  timestamp + ttl;
+    }
+    else if(typeof payload.exp != 'undefined'){
+      new_payload.exp = timestamp + payload.exp;
     }
 
     // force id to be string

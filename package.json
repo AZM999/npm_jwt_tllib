@@ -1,13 +1,14 @@
 {
   "name": "npm_jwt_tllib",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A typesafe library to encode, decode and verify JWTs.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
-    "test": "karma start",
-    "start:dev": "nodemon",
-    "dev": "webpack-dev-server --inline --hot",
-    "build": "webpack -p"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,7 @@
   "author": "azm999",
   "license": "ISC",
   "engines": {
-    "node": "18.19.0"
+    "node": "20.16.0"
   },
   "bugs": {
     "url": "https://github.com/AZM999/npm_jwt_tllib/issues"
@@ -29,22 +30,10 @@
   "homepage": "https://github.com/AZM999/npm_jwt_tllib#readme",
   "devDependencies": {
     "@types/crypto-js": "^4.2.2",
-    "@types/jasmine": "^5.1.4",
-    "@types/utf8": "^3.0.3",
-    "jasmine-core": "^5.2.0",
-    "karma": "^6.4.3",
-    "karma-chrome-launcher": "^3.2.0",
-    "karma-jasmine": "^5.1.0",
-    "karma-webpack": "^5.0.1",
-    "nodemon": "^3.1.4",
+    "crypto-js": "^4.2.0",
+    "cryptojs": "^2.5.3",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.4",
-    "webpack": "^5.93.0",
-    "webpack-dev-server": "^5.0.4"
-  },
-  "dependencies": {
-    "crypto-js": "^4.2.0",
-    "npm_jwt_tllib": "^1.0.2"
+    "typescript": "^5.5.4"
   }
 }

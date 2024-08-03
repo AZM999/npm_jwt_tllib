@@ -1,5 +1,5 @@
 // encode to B64 string
-function b64encode (str: string|object): string
+export function b64encode (str: string|object): string
 {
   // handle object
   if (typeof str === 'object')
@@ -34,4 +34,4 @@ const enc_header = b64encode (header);
 //console.log (enc_header);
 //console.log (b64decode(enc_header))
 
-module.exports =  {b64encode, b64decode};
+//export {b64encode, b64decode};
